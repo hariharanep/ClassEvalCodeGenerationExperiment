@@ -1,8 +1,8 @@
 # ClassEvalCodeGenerationExperiment
 
-These are the configurations for my local machine where I was able to run the ClassEval benchmark code provided in this link: https://github.com/FudanSELab/ClassEval <br />
+These are the configurations for my local machine where I was able to modify and execute the ClassEval benchmark code provided in this link: https://github.com/FudanSELab/ClassEval <br />
 <img width="481" alt="Screenshot 2025-03-11 at 4 44 30 AM" src="https://github.com/user-attachments/assets/cfe0aaa6-1357-4e3b-98c1-172621f19297" /> <br />
-After cloning the ClassEval repository and making modifications wherever I found necessary I was able to end up with this repository which represents my final changes. In order to get things to work I had to execute the following commands in the terminal to make sure I had all the required Python packages installed. <br />
+To replicate the experiment that occurred in the ClassEval paper, I first had to execute the following commands in the terminal to make sure I had all the required Python packages installed. <br />
 <br />
 pip install -r requirements.txt
 <br />
