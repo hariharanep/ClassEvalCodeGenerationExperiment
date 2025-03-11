@@ -1,1 +1,68 @@
 # ClassEvalCodeGenerationExperiment
+
+These are the configurations for my local machine where I was able to run the ClassEval benchmark code provided in this link: https://github.com/FudanSELab/ClassEval
+<img width="481" alt="Screenshot 2025-03-11 at 4 44 30 AM" src="https://github.com/user-attachments/assets/cfe0aaa6-1357-4e3b-98c1-172621f19297" />
+After cloning the ClassEval repository and making modifications wherever I found necessary I was able to end up with this repository which represents my final changes. In order to get things to work I had to execute the following commands in the terminal to make sure I had all the required Python packages installed.
+
+pip install -r requirements.txt
+pip install torch torchvision torchaudio
+pip install -U sentence-transformers
+pip install 'accelerate>=0.26.0'
+
+I evaluated the GPT-4, GPT-3.5, and WizardCoder LLMs in two different ways for this experiment. First, I evaluated these LLMs on the ClassEval benchmark with the following configurations: LLM temperature of 0.2, nucleus sampling strategy where the number of samples generated is 1, and a holistic code generation strategy. In order to execute this evaluation I had to cd into the generation folder and execute this command through the terminal: 
+
+For GPT-4 and GPT-3.5
+python inference.py \
+--model <9 for GPT-4 and 8 for GPT-3.5> \
+--openai_key <provide OpenAPI key> \
+--output_path ../output/model_output/model_output.json \
+--greedy 0 \
+--sample 1 \
+--data_path ../data/ClassEval_data.json \
+--generation_strategy 0 \
+--openai_base https://api.openai.com/v1
+
+For WizardCoder
+python inference.py \           
+--model 1 \
+--output_path ../output/model_output/model_output.json \
+--greedy 0 \
+--sample 1 \
+--data_path ../data/ClassEval_data.json \
+--generation_strategy 0 \
+
+After the inference.py Python code finished executing, I had to cd into the classeval_evaluation folder and execute this command through the terminal: 
+
+python evaluation.py --greedy 0
+
+Once this command finished executing, I was able to see the json files containing the pass@k results, the individual test case results, and the model output results in the output folder.
+
+For the second part of my experiment, I evaluated the 3 LLMs under all 3 code generation strategies on the ClassEval benchmark with the following configurations: LLM temperature of 0.2, greedy decoding strategy where the LLM only generates one sample. In order to execute this evaluation I had to cd into the generation folder and execute this command through the terminal: 
+
+For GPT-4 and GPT-3.5
+python inference.py \
+--model <9 for GPT-4 and 8 for GPT-3.5> \
+--openai_key <provide OpenAPI key> \
+--output_path ../output/model_output/model_output.json \
+--greedy 1 \
+--data_path ../data/ClassEval_data.json \
+--generation_strategy <0 for holistic generation strategy, 1 for incremental generation strategy, 2 for compositional generation strategy> \
+--openai_base https://api.openai.com/v1
+
+For WizardCoder
+python inference.py \           
+--model 1 \
+--output_path ../output/model_output/model_output.json \
+--greedy 1 \
+--data_path ../data/ClassEval_data.json \
+--generation_strategy <0 for holistic generation strategy, 1 for incremental generation strategy, 2 for compositional generation strategy> \
+
+After the inference.py Python code finished executing, I had to cd into the classeval_evaluation folder and execute this command through the terminal: 
+
+python evaluation.py --greedy 1
+
+Once this command finished executing, I was able to see the json files containing the pass@k results, the individual test case results, and the model output results in the output folder.
+
+
+
+
