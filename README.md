@@ -10,8 +10,6 @@ pip install torch torchvision torchaudio
 <br />
 pip install -U sentence-transformers
 <br />
-pip install 'accelerate>=0.26.0'
-<br />
 <br />
 I evaluated the GPT-4 and GPT-3.5 LLMs in two different ways for this experiment. First, I evaluated these LLMs on the ClassEval benchmark with the following configurations: LLM temperature of 0.2, nucleus sampling strategy where the number of samples generated is 3, and a holistic code generation strategy. In order to execute this evaluation I had to cd into the generation folder and execute this command through the terminal: <br /><br />
 
