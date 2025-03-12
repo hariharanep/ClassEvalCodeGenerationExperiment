@@ -1,0 +1,26 @@
+{
+    "pass_1": {
+        "model_output": {
+            "class_partial_success": 0.20600000000000002,
+            "class_success": 0.126,
+            "fun_partial_success": 0.2693227091633463,
+            "fun_success": 0.20996015936254972
+        }
+    },
+    "pass_3": {
+        "model_output": {
+            "class_partial_success": 0.261,
+            "class_success": 0.157,
+            "fun_partial_success": 0.34023904382470127,
+            "fun_success": 0.2651394422310756
+        }
+    },
+    "pass_5": {
+        "model_output": {
+            "class_partial_success": 0.28,
+            "class_success": 0.17,
+            "fun_partial_success": 0.3645418326693227,
+            "fun_success": 0.2848605577689243
+        }
+    }
+}
