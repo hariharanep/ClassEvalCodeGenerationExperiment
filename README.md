@@ -15,7 +15,7 @@ I evaluated the GPT-4 and GPT-3.5 LLMs in two different ways for this experiment
 
 python inference.py \
 --model <9 for GPT-4 and 8 for GPT-3.5> \
---openai_key <provide OpenAI key> \
+--openai_key <provide openai_key> \
 --output_path ../output/model_output/model_output.json \
 --greedy 0 \
 --sample 3 \
@@ -32,7 +32,7 @@ Once this command finished executing, I was able to see the json files containin
 For the second part of my experiment, I evaluated the GPT-4 and GPT-3.5 LLMs under all 3 code generation strategies in the ClassEval benchmark with the following configurations: LLM temperature of 0.2, greedy decoding strategy where the LLM only generates one sample. In order to execute this evaluation I had to cd into the generation folder and execute this command through the terminal: <br /><br />
 python inference.py \
 --model <9 for GPT-4 and 8 for GPT-3.5> \
---openai_key <provide OpenAI key> \
+--openai_key <provide openai_key> \
 --output_path ../output/model_output/model_output.json \
 --greedy 1 \
 --data_path ../data/ClassEval_data.json \
